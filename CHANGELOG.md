@@ -8,10 +8,14 @@
 # Changelog 1.5.2
 ### Changes / Additions
 - During the final wave at the 1-minute mark, all remaining zombies will teleport closer to the flag.
-- While a plant is equipped with the Plant Pot Helmet, The Gardening Glove can be used to place the plant back on the ground.
-- Cones, Buckets, and Football helmets now only block damage from above an entity.
-  - Each headgear has also been given a buff to armor and armor toughness.
+- Cones, Buckets, and Football helmets now only block damage from above.
+  - They have also been given a buff to armor and armor toughness.
 - Newspapers now work like Shields and only block damage from the front.
+- While a plant is equipped with the Plant Pot Helmet, The Gardening Glove can be used to place the plant back on the ground.
+- Dye Blaster, Gardening Glove, Plant Pot Helmet, and Ducky Tube can now be enchanted.
+- Added a new enchantment, "Lobbing".
+  - This enchantment applies to the Gardening Glove and allows the player to toss the held plant.
+- Dye Blasters now store dye ammo. Dye Blaster can only be fired after being loaded with dye. Each shot has a chance to consume the stored dye.
 ### Hotfix
 - Pumpkins are no longer duplicated when using a Gardening Glove.
 - 

@@ -99,6 +99,7 @@ object PazItems {
             .rarity(Rarity.UNCOMMON)
             .repairable(Items.LEATHER)
             .durability(325)
+            .enchantable(10)
             .component(DataComponents.TOOL, GardeningGloveItem.createToolProperties())
             .attributes(
                 ItemAttributeModifiers.builder()
@@ -148,6 +149,7 @@ object PazItems {
         properties = Item.Properties()
             .durability(200)
             .repairable(Items.PHANTOM_MEMBRANE)
+            .enchantable(1)
             .attributes(
                 ItemAttributeModifiers.builder()
                     .add(
@@ -200,6 +202,7 @@ object PazItems {
         "dye_blaster", ::DyeBlasterItem,
         properties = Item.Properties()
             .durability(685)
+            .enchantable(1)
             .repairable(BRAINZ_ALLOY)
             .stacksTo(1)
     )
@@ -264,6 +267,7 @@ object PazItems {
         "plant_pot_helmet", ::PlantPotHelmetItem,
         properties = Item.Properties()
             .durability(185)
+            .enchantable(1)
             .rarity(Rarity.UNCOMMON)
             .repairable(Items.BRICK)
             .component(

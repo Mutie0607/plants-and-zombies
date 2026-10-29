@@ -1,5 +1,5 @@
 {
-  "anvil_cost": 4,
+  "anvil_cost": 5,
   "description": {
     "translate": "enchantment.plantz.lobbing"
   },
@@ -8,12 +8,12 @@
   },
   "max_cost": {
     "base": 45,
-    "per_level_above_first": 5
+    "per_level_above_first": 14
   },
   "max_level": 2,
   "min_cost": {
-    "base": 12,
-    "per_level_above_first": 5
+    "base": 15,
+    "per_level_above_first": 16
   },
   "slots": [
     "mainhand"

@@ -390,5 +390,7 @@
   "plantz.subtitles.entity.gargantuar.hurt": "Gargantuar hurt",
 
   "plantz.subtitles.event.mob_effect.hypnotized": "Hypnotized mob",
-  "plantz.subtitles.event.mob_effect.zombie_omen": "Zombie raid omen"
+  "plantz.subtitles.event.mob_effect.zombie_omen": "Zombie raid omen",
+
+  "biome.plantz.graveyard": "Graveyard"
 }
