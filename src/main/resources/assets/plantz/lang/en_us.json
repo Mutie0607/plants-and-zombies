@@ -125,6 +125,8 @@
   "effect.plantz.painted.magenta": "Painted Magenta",
   "effect.plantz.painted.pink": "Painted Pink",
 
+  "enchantment.plantz.lobbing": "Lobbing",
+
   "component.stored_sun.description": "Stores and uses collected Sun",
   "component.stored_sun": "%s / %s",
   "component.stored_water.description": "Used to hydrate plants",

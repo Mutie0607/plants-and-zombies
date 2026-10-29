@@ -75,7 +75,7 @@ class DyeBlasterItem(properties: Properties) : ProjectileWeaponItem(properties) 
 
     fun reload(level: Level, livingEntity: LivingEntity, itemStack: ItemStack): ItemStack {
         val ammo = draw(itemStack, livingEntity.getProjectile(itemStack), livingEntity).firstOrNull()?: ItemStack.EMPTY
-        if (!ammo.isEmpty) {
+        if (!ammo.isEmpty && ammo.`is`(ItemTags.DYES)) {
             itemStack.set(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles(mutableListOf(ItemStackTemplate(ammo.item))))
             ammo.get(DataComponents.DYE)?.fireworkColor?.let { itemStack.set(DataComponents.DYED_COLOR, DyedItemColor(it)) }
             level.playSound(livingEntity, livingEntity.blockPosition(), SoundEvents.CROSSBOW_LOADING_END.value(), SoundSource.NEUTRAL, 0.3f, 1.4f)

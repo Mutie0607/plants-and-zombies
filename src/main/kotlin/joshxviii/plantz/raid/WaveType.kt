@@ -17,6 +17,8 @@ import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.ByIdMap
 import net.minecraft.util.Mth
 import net.minecraft.util.StringRepresentable
+import net.minecraft.world.DifficultyInstance
+import net.minecraft.world.entity.EntitySpawnReason
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.entity.Mob
@@ -287,8 +289,8 @@ enum class WaveType(
 
             listOf(
                 WaveSpawnEntry(
-                    PazEntities.ROBO_ZOMBIE,
-                    scaled(0.5f + wave * 0.35f, omen, credits, min = 1, max = 4)
+                    PazEntities.ZOMBIE_DRONE,
+                    scaled(4f + wave * 0.9f, omen, credits, min = 2, max = 10)
                 ),
                 WaveSpawnEntry(
                     PazEntities.ENGINEER_ZOMBIE,
@@ -296,12 +298,13 @@ enum class WaveType(
                 ),
                 WaveSpawnEntry(
                     PazEntities.SOLDIER_ZOMBIE,
-                    scaled(3f + wave * 0.7f, omen, credits, min = 1)
+                    scaled(3f + wave * 0.6f, omen, credits, min = 1)
                 ),
                 WaveSpawnEntry(
-                    PazEntities.ZOMBIE_DRONE,
-                    scaled(4f + wave * 0.9f, omen, credits, min = 2, max = 10)
-                )
+                    PazEntities.ROBO_ZOMBIE,
+                    scaled(0.5f + wave * 0.35f, omen, credits, min = 1, max = 4),
+                    ::configureRoboArmy
+                ),
             )
         },
         lootTableFn = { _, _ -> PazLootTables.MAIL_REWARD_ARMY }
@@ -490,6 +493,21 @@ enum class WaveType(
 
                         zombie.setItemSlot(slot, itemStack)
                     }
+                }
+            }
+        }
+
+        fun configureRoboArmy(zombie: Zombie) {
+            if (zombie is RoboZombie) {
+                val level = zombie.level() as? ServerLevel ?: return
+                if (zombie.random.nextFloat() < 0.25f) {
+                    PazEntities.SOLDIER_ZOMBIE.create(zombie.level(), EntitySpawnReason.JOCKEY)?.let {
+                        it.snapTo(zombie.x, zombie.y, zombie.z, zombie.yRot, 0.0f)
+                        it.finalizeSpawn(level, level.getCurrentDifficultyAt(zombie.blockPosition()), EntitySpawnReason.JOCKEY, null)
+                        it.startRiding(zombie, false, false)
+                        zombie.level().addFreshEntity(it)
+                    }
+                    zombie.isTransformed = true
                 }
             }
         }

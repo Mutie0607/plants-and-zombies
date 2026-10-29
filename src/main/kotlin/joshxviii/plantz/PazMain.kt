@@ -27,6 +27,7 @@ object PazMain : ModInitializer {
 
 	override fun onInitialize() {
 		PazRegistries.initialize()
+		PazEnchantments.initialize()
 		PazConfig.load()
 		// clear client raid cache + load config
 		ServerLifecycleEvents.SERVER_STARTING.register {

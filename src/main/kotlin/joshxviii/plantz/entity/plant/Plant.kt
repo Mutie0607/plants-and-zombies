@@ -884,7 +884,7 @@ abstract class Plant(type: EntityType<out Plant>, level: Level) : TamableAnimal(
         return super.skipAttackInteraction(source)
     }
 
-    open fun attackedWithGlove(player: Player, item: ItemStack, hand: InteractionHand) {}
+    open fun attackedWithGlove(attacker: LivingEntity, item: ItemStack, hand: InteractionHand) {}
 
     override fun mobInteract(player: Player, hand: InteractionHand): InteractionResult {
         val itemStack = player.getItemInHand(hand)
