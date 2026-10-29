@@ -53,6 +53,7 @@ import net.minecraft.world.item.component.BlocksAttacks.DamageReduction
 import net.minecraft.world.item.component.BlocksAttacks.ItemDamageFunction
 import net.minecraft.world.item.component.ItemAttributeModifiers
 import net.minecraft.world.item.component.UseCooldown
+import net.minecraft.world.item.component.WritableBookContent
 import net.minecraft.world.item.equipment.ArmorMaterials
 import net.minecraft.world.item.equipment.ArmorType
 import net.minecraft.world.item.equipment.EquipmentAssets
@@ -243,8 +244,8 @@ object PazItems {
     )
     @JvmField
     val LETTER: Item = registerItem(
-        "letter",
-        properties = Item.Properties()
+        "letter", ::LetterItem,
+        properties = Item.Properties().stacksTo(1).component(DataComponents.WRITABLE_BOOK_CONTENT, WritableBookContent.EMPTY)
     )
     @JvmField
     val SEED_PACKET: Item = registerItem(

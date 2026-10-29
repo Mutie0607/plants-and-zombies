@@ -352,6 +352,8 @@
   "container.plantz.mailbox_success": "Sent!",
   "container.plantz.time_machine.wip": "???",
 
+  "gui.plantz.letter": "Letter",
+
   "plantz.subtitles.projectile.deflected": "Projectile deflected",
   "plantz.subtitles.projectile.shoot": "Projectile fired",
 
