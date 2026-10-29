@@ -9,6 +9,9 @@
 ### Changes / Additions
 - During the final wave at the 1-minute mark, all remaining zombies will teleport closer to the flag.
 - While a plant is equipped with the Plant Pot Helmet, The Gardening Glove can be used to place the plant back on the ground.
+- Cones, Buckets, and Football helmets now only block damage from above an entity.
+  - Each headgear has also been given a buff to armor and armor toughness.
+- Newspapers now work like Shields and only block damage from the front.
 ### Hotfix
 - Pumpkins are no longer duplicated when using a Gardening Glove.
 - 

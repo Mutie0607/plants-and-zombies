@@ -1,0 +1,17 @@
+{
+  "values": [
+    {
+      "id": "#c:foods/leafy_green",
+      "required": false
+    },
+    {
+      "id": "#c:crops/tomato",
+      "required": false
+    },
+    {
+      "id": "#c:crops/onion",
+      "required": false
+    },
+    "minecraft:cooked_beef"
+  ]
+}
